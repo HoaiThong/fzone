@@ -49,8 +49,7 @@ class BillDAO {
                     . "WHERE i.idProduct = p.idProduct AND i.idStaff=? AND i.idStore=? GROUP BY i.idProduct) "
                     . "WHERE p.idProduct IN ( "
                     . "SELECT d.idProduct FROM tbl_shopping_cart d WHERE d.idStaff=? AND d.idStore=? );"
-                    . "DELETE FROM tbl_shopping_cart WHERE idStaff=? AND idStore=?;"
-                    . "SELECT @num;";
+                    . "DELETE FROM tbl_shopping_cart WHERE idStaff=? AND idStore=?;";
 
             $stmt = $this->conn->prepare($sql);
             //Thiết lập kiểu dữ liệu trả về

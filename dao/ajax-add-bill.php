@@ -1,7 +1,7 @@
 <?php
 
-//include '../admin/includes/session-check.php';
-session_start();
+include '../includes/session-check.php';
+
 include './BillDAO.php';
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 //    $arrayCart_json = $_POST['arrayCart'];
@@ -19,10 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $billDAO = new BillDAO();
     $response = $billDAO->add_bill($_idStore, $_idStaff, $_idExpress, $_linkExpress, $_ecommerceLevel, $_buyerName, $_buyerPhone, $_buyerAddress, $_buyerEmail, $_note, $_orderStatus);
 
-//    
-//    $arrayCart = json_decode($arrayCart_json,true);
-//    
-//  
 
     echo $response;
 }

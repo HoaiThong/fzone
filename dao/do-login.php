@@ -12,7 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $userDAO = new UserDAO();
     $response = $userDAO->signin_by_phone($phoneNumber, $password);
     if (!empty($response)) {
-//Lưu tên đăng nhập
         $_SESSION['phone'] = $phoneNumber;
         $_SESSION['userName'] = $response[0]['userName'];
         $_SESSION['idUser'] = $response[0]['idUser'];

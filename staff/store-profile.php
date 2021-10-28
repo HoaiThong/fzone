@@ -53,11 +53,6 @@ $store = $storeDAO->get_store_info_by_id_store($_idUser, $_idStore);
                     <input type="text" id="store_addr" name="store_addr" class="form-control store_addr" placeholder="" value="<?php echo $store[0]['address']; ?>">
                 </div>
                 <div class="form-group">
-                    <label style="color: blue"> Phân loại hàng hóa ( Ex: Màu sắc,Size...)
-                        * Ngăn cách bằng dấu phẩy</label>
-                    <input type="text" id="store_option_category" name="store_option_category" class="form-control store_option_category" placeholder="" value="<?php echo $store[0]['optionCategory']; ?>">
-                </div>
-                <div class="form-group">
                     <label style="color: blue"> Mô tả </label>
                     <textarea type="text" id="store_description" name="store_description" rows="16" class="form-control store_description" placeholder=""  ><?php echo $store[0]['description']; ?></textarea>
                 </div>

@@ -1,7 +1,6 @@
 <?php
 
-//include '../admin/includes/session-check.php';
-session_start();
+include '../includes/session-check.php';
 include './BillDAO.php';
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $_idStore = $_POST['idStore'];

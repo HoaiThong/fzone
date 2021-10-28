@@ -211,8 +211,8 @@ include('includes/footer_1.php');
 <script>
     function addCart() {
         var idProduct = document.getElementById('product_id_cart').value;
-        var idStaff = document.getElementById('staff_id_cart').value;
-        var idStore = document.getElementById('store_id_cart').value;
+        var idStore = <?php echo $_idStore; ?>;
+        var idStaff = <?php echo $_idStaff; ?>;
         var quantity = document.getElementById('product_quantity_cart').value;
         var finalPrice = document.getElementById('product_price_cart').value;
         var note = document.getElementById('product_note_cart').value;
