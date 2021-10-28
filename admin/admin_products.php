@@ -61,9 +61,12 @@ include '../notify-msg/notify-error-modal.php';
                             <th> Giá dropship </th>
                             <?php
                             for ($index = 0; $index < count($arrayCategories); $index++) {
-                                ?>
-                                <th> <?php echo $arrayCategories[$index] ?></th>
-                                <?php
+                                $s_categ = trim($arrayCategories[$index]);
+                                if (!empty($s_categ)) {
+                                    ?>
+                                    <th> <?php echo $arrayCategories[$index] ?></th>
+                                    <?php
+                                }
                             }
                             ?>
                             <th> Số lượng </th>
@@ -90,12 +93,16 @@ include '../notify-msg/notify-error-modal.php';
                                 for ($index1 = 0; $index1 < count($arrayCategories); $index1++) {
                                     $value1 = '';
                                     $s1 = trim($arrayCategories[$index1]);
-                                    if (strpos($str, $s1) !== false)
-                                        $value1 = $result[$s1];
-                                    ?>
-
-                                    <td><?php echo $value1 ?></td>
-                                    <?php
+                                    if (!empty($s1)) {
+                                        $pos = strpos($str, $s1);
+                                        if ($pos !== false)
+                                            $value1 = $result[$s1];
+                                        else
+                                            $value1 = '';
+                                        ?>
+                                        <td><?php echo $value1 ?></td>
+                                        <?php
+                                    }
                                 }
                                 ?>
                                 <td><?php echo $value["inventory"]; ?></td>
@@ -280,7 +287,7 @@ include('includes/footer_1.php');
                     quantity: quantity, finalPrice: finalPrice}),
                 success: function (data) {
                     console.log(data);
-                   if (data === 'success') {
+                    if (data === 'success') {
                         $('#notifySuccessModal').modal();
                         $('#buyNowModal').modal('hide');
                         location.reload();

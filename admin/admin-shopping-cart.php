@@ -4,9 +4,11 @@ $nameStore = $_SESSION['nameStore'];
 $categories = $_SESSION['category'];
 $_idStore = $_SESSION['storeId'];
 $_idStaff = $_SESSION['staffId'];
+$notify_label='Đặt Hàng';
+$notify_content='Chọn OK để thực hiện hành động này';
 include('includes/header_1.php');
 include('includes/navbar_admin_store.php');
-include '../notify-msg/warning_confirm-modal.php';
+include '../notify-msg/notify-msg-modal.php';
 include '../dao/functions.php';
 include '../dao/CartDAO.php';
 ?>
@@ -202,7 +204,7 @@ include '../notify-msg/notify-error-modal.php';
         <div class="col-sm-4 card shadow mb-4" ><div class="card-body row">
                 <div class="text-center my-auto">
                     <span class="col-xl-3 col-md-6 mb-4"> 
-                        <button type="submit" id="payment_cart_btn" onclick="printf()" name="btn" class="btn btn-success payment_cart_btn" data-idstaff="<?php echo $_idStaff; ?>" data-idstore="<?php echo $_idStore; ?>" ><i class="fas fas-close"></i>Đặt hàng </button>
+                        <button type="submit" id="payment_cart_btn" onclick="payment()" name="btn" class="btn btn-success payment_cart_btn" data-idstaff="<?php echo $_idStaff; ?>" data-idstore="<?php echo $_idStore; ?>" ><i class="fas fas-close"></i>Đặt hàng </button>
                     </span>
                     <span class="col-xl-3 col-md-6 mb-4" style="color: black">Tổng tiền:</span>
                     <span class="col-xl-3 col-md-6 mb-4" style="color: red;font-weight: bold"><?php echo number_format($sumCart, 0, ',', '.'); ?></span>
@@ -312,7 +314,7 @@ include('includes/footer_1.php');
 
 <script>
     function payment() {
-        $('#notifyAcceptlModal').modal('show');
+        $('#notifyMsgModal').modal('show');
     }
 </script>
 <script>
@@ -339,10 +341,10 @@ include('includes/footer_1.php');
                 console.log(data);
 //                alert(data);
                 if (data === 'success') {
-                    $('#notifyAcceptlModal').modal('hide');
+                    $('#notifyMsgModal').modal('hide');
                     location.reload();
                 } else {
-                    $('#notifyAcceptlModal').modal('hide');
+                    $('#notifyMsgModal').modal('hide');
                     $('#notifyErrorModal').modal();
                 }
             }

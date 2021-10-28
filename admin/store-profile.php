@@ -98,6 +98,11 @@ include('includes/footer_1.php');
                 store_addr: store_addr, store_option_category: store_option_category, store_description: store_description, }),
             success: function (data) {
                 $("#notifyAcceptlModal").modal('hide');
+                if (data == 'success') {
+                    location.reload();
+                } else {
+                    alert(data);
+                }
             }
         });
     }

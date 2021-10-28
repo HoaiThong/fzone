@@ -73,13 +73,11 @@ class StoreDAO {
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $stmt->execute();
             // success
-            $response[$this->success] = 1;
-            $response[$this->message] = $this->success;
+            return $this->success;
         } catch (PDOException $e) {
-            $response[$this->success] = 0;
-            $response[$this->message] = $e->getMessage();
+            return $this->error;
         }
-        return $response;
+        return $this->error;
     }
 
     public function get_store_info($_idUser) {
