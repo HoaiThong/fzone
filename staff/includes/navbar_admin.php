@@ -6,7 +6,7 @@
         <div class="sidebar-brand-icon">
             <!--<i class='fas fa-store-alt' ></i>-->
         </div>
-        <div class="sidebar-brand-text mx-3" style="color: blue">GStore <sup>.vn</sup></div>
+        <div class="sidebar-brand-text mx-3" style="color: blue">FZONE <sup>.vn</sup></div>
     </a>
 
     <!-- Divider -->
@@ -25,7 +25,7 @@
         Manager
     </div>
     <li class="nav-item">
-        <a class="nav-link" href="admin-wallet.php">
+        <a class="nav-link" href="wallet.php">
             <i class="fas fa-fw fa fa fa fa-wallet"></i>
             <span>Ví tiền </span></a>
     </li>

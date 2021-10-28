@@ -37,7 +37,7 @@ $arrayBills = $billDAO->get_array_order_on_store($_idStore);
             <div class="table-responsive">
                 <table id="example" class="display table table-hover table-bordered" style="width:100%">
                     <thead>
-                        <tr>
+                        <tr style="background-color: #04AA6D;color: white;">
                             <th> </th>
                             <th> Mã đơn hàng </th>
                             <th> Mã vận đơn </th>
@@ -53,7 +53,7 @@ $arrayBills = $billDAO->get_array_order_on_store($_idStore);
                         </tr>
                     </thead>
                     <tfoot>
-                        <tr>
+                        <tr style="background-color: #04AA6D;color: white;">
                             <th> </th>
                             <th> Mã đơn hàng </th>
                             <th> Mã vận đơn </th>

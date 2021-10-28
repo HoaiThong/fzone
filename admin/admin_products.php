@@ -52,7 +52,7 @@ include '../notify-msg/notify-error-modal.php';
 
                 <table class="table table-hover table-bordered " id="dataTable" style="width:100%" cellspacing="0">
                     <thead>
-                        <tr style="background: ghostwhite;">
+                        <tr style="background-color: #1cc88a;color: white;">
                             <th> Mã sản phẩm </th>
                             <th> Mã SKU </th>
                             <th>Hình ảnh</th>

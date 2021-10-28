@@ -62,10 +62,7 @@ $store = $storeDAO->get_store_info_by_id_store($_idUser, $_idStore);
                     <textarea type="text" id="store_description" name="store_description" rows="16" class="form-control store_description" placeholder=""  ><?php echo $store[0]['description']; ?></textarea>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="submit" onclick="update()" name="update_btn" class="btn btn-primary update_btn"> Cập nhật </button>
-            </div>
+            
         </div>
     </div>
 </div>

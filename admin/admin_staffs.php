@@ -46,7 +46,7 @@ $arrayStaffs = $staffDao->get_array_staff_on_store($_idStore);
 
                 <table class="table table-hover table-bordered " id="dataTable" style="width:100%" cellspacing="0">
                     <thead>
-                        <tr style="background: ghostwhite">
+                        <tr style="background-color: #04AA6D;color: white;">
                             <th> Mã </th>
                             <th> Họ tên </th>
                             <th> Ngày sinh </th>

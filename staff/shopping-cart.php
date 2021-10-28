@@ -18,8 +18,6 @@ $sumCart = 0;
 ?>
 <!-- Begin Page Content -->
 <?php
-include './includes/add_product_form.php';
-include './includes/edit_product_form.php';
 include './includes/delete_modal.php';
 include '../notify-msg/notify-success-modal.php';
 include '../notify-msg/notify-error-modal.php';
@@ -45,6 +43,83 @@ include '../notify-msg/notify-error-modal.php';
                                 </button>-->
 
             </h6>
+        </div>
+
+
+        <div class="card-body">
+
+            <div class="table-responsive">
+
+                <table class="table table-hover table-bordered " id="dataTable" style="width:100%" cellspacing="0">
+                    <thead>
+                        <tr style="background-color: #04AA6D;color: white;">
+                            <th> Mã sản phẩm </th>
+                            <th> Mã SKU </th>
+                            <th>Hình ảnh</th>
+                            <th> Tên sản phẩm </th>
+                            <?php
+                            for ($index = 0; $index < count($arrayCategories); $index++) {
+                                ?>
+                                <th> <?php echo $arrayCategories[$index] ?></th>
+                                <?php
+                            }
+                            ?>
+                            <th> Giá bán</th>
+                            <th> Số lượng </th>
+                            <th> Đơn vị </th>
+                            <th> Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $i = -1;
+                        foreach ($arrayCart as $value) {
+                            $i++;
+                            $btnName = 'remove_cart_btn' . $i;
+                            $sumCart = $sumCart + $value["finalPrice"] * $value["quantity"];
+                            ?>
+                            <tr style="text-align: center">
+                                <td> <?php echo $value["idProduct"]; ?></td>
+                                <td> <?php echo $value["skuProduct"]; ?></td>
+                                <td><img  width="100" height="120" src=" <?php echo $value["iconLink"]; ?>" alt="" /></td>
+                                <td> <?php echo $value["nameProduct"]; ?></td>
+                                <?php
+                                $str = $value["category"];
+                                $result = json_decode($str, true);
+                                for ($index1 = 0; $index1 < count($arrayCategories); $index1++) {
+                                    $value1 = '';
+                                    $s1 = trim($arrayCategories[$index1]);
+                                    if (strpos($str, $s1) !== false)
+                                        $value1 = $result[$s1];
+                                    ?>
+
+                                    <td><?php echo $value1 ?></td>
+                                    <?php
+                                }
+                                ?>
+                                <td style="font-weight: bold;color: black"><?php echo number_format($value["finalPrice"], 0, ',', '.'); ?></td>
+                                <td style="font-weight: bold;color: black">
+                                    <input type="number" readonly="readonly" min="0" max="<?php echo $value["inventory"]; ?>" name="quantity_cart" class="form-control quantity_cart" placeholder="" value="<?php echo $value["quantity"]; ?>" style="border-color: blue">
+
+                                </td>
+                                <td> <?php echo $value["unitProduct"]; ?></td>
+                                <td>
+                                    <button style="margin-top: 4px" type="submit" onclick="removeCart(<?php echo $i; ?>)"  id="<?php echo $btnName; ?>" name="remove_cart_btn" class="btn btn-primary remove_cart_btn" data-idproduct="<?php echo $value["idProduct"]; ?>" data-quantity="<?php echo $value["quantity"]; ?>"
+                                            value="<?php echo $value["idCart"]; ?>" >
+                                        Xóa </button>
+
+                                </td>
+
+                            </tr>
+                            <?php
+                        }
+                        ?>
+
+
+                    </tbody>
+                </table>
+
+            </div>
         </div>
         <div class="container card-body card shadow" style="margin-top: 24px;margin-bottom: 24px">
             <div class="row" style="background: white">
@@ -113,82 +188,6 @@ include '../notify-msg/notify-error-modal.php';
                                     </div>
                                 </div></div>
                         </div>-->
-        </div>
-
-        <div class="card-body">
-
-            <div class="table-responsive">
-
-                <table class="table table-hover table-bordered " id="dataTable" style="width:100%" cellspacing="0">
-                    <thead>
-                        <tr style="background: ghostwhite;">
-                            <th> Mã sản phẩm </th>
-                            <th> Mã SKU </th>
-                            <th>Hình ảnh</th>
-                            <th> Tên sản phẩm </th>
-                            <?php
-                            for ($index = 0; $index < count($arrayCategories); $index++) {
-                                ?>
-                                <th> <?php echo $arrayCategories[$index] ?></th>
-                                <?php
-                            }
-                            ?>
-                            <th> Giá bán</th>
-                            <th> Số lượng </th>
-                            <th> Đơn vị </th>
-                            <th> Hành động</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $i = -1;
-                        foreach ($arrayCart as $value) {
-                            $i++;
-                            $btnName = 'remove_cart_btn' . $i;
-                            $sumCart = $sumCart + $value["finalPrice"] * $value["quantity"];
-                            ?>
-                            <tr style="text-align: center">
-                                <td> <?php echo $value["idProduct"]; ?></td>
-                                <td> <?php echo $value["skuProduct"]; ?></td>
-                                <td><img  width="100" height="120" src=" <?php echo $value["iconLink"]; ?>" alt="" /></td>
-                                <td> <?php echo $value["nameProduct"]; ?></td>
-                                <?php
-                                $str = $value["category"];
-                                $result = json_decode($str, true);
-                                for ($index1 = 0; $index1 < count($arrayCategories); $index1++) {
-                                    $value1 = '';
-                                    $s1 = trim($arrayCategories[$index1]);
-                                    if (strpos($str, $s1) !== false)
-                                        $value1 = $result[$s1];
-                                    ?>
-
-                                    <td><?php echo $value1 ?></td>
-                                    <?php
-                                }
-                                ?>
-                                <td style="font-weight: bold;color: black"><?php echo number_format($value["finalPrice"], 0, ',', '.'); ?></td>
-                                <td style="font-weight: bold;color: black">
-                                    <input type="number" readonly="readonly" min="0" max="<?php echo $value["inventory"]; ?>" name="quantity_cart" class="form-control quantity_cart" placeholder="" value="<?php echo $value["quantity"]; ?>" style="border-color: blue">
-
-                                </td>
-                                <td> <?php echo $value["unitProduct"]; ?></td>
-                                <td>
-                                    <button style="margin-top: 4px" type="submit" onclick="removeCart(<?php echo $i; ?>)"  id="<?php echo $btnName; ?>" name="remove_cart_btn" class="btn btn-primary remove_cart_btn" data-idproduct="<?php echo $value["idProduct"]; ?>" data-quantity="<?php echo $value["quantity"]; ?>"
-                                            value="<?php echo $value["idCart"]; ?>" >
-                                        Xóa </button>
-
-                                </td>
-
-                            </tr>
-                            <?php
-                        }
-                        ?>
-
-
-                    </tbody>
-                </table>
-
-            </div>
         </div>
     </div>
     <div class="row ">

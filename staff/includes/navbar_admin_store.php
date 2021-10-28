@@ -2,11 +2,11 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin.php" style="background: whitesmoke">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.php" style="background: whitesmoke">
         <div class="sidebar-brand-icon">
             <i class='fas fa-store-alt' style='font-size:24px;color:red'></i>
         </div>
-        <div class="sidebar-brand-text mx-3" style="color: blue">Home <sup>.vn</sup></div>
+        <div class="sidebar-brand-text mx-3" style="color: blue">FZONE <sup>.vn</sup></div>
     </a>
 
     <!-- Divider -->
@@ -14,7 +14,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="admin_store.php">
+        <a class="nav-link" href="store.php">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -25,21 +25,15 @@
         Manager
     </div>
     <li class="nav-item">
-        <a class="nav-link" href="admin-shopping-cart.php">
+        <a class="nav-link" href="shopping-cart.php">
             <i class="fas fa-fw fa fa-shopping-cart"></i>
             <span>Giỏ hàng </span></a>
-        <a class="nav-link" href="admin_products.php">
+        <a class="nav-link" href="products.php">
             <i class="fas fa-fw fa fa-cubes"></i>
             <span>Sản phẩm </span></a>
-        <a class="nav-link" href="admin_staffs.php">
-            <i class="fas fa-fw fa fa-users"></i>
-            <span>Nhân viên </span></a>
-        <a class="nav-link" href="admin_orders.php">
+        <a class="nav-link" href="orders.php">
             <i class="fas fa-fw fa fa fa fa-cube"></i>
             <span>Đơn hàng </span></a>
-        <a class="nav-link" href="admin-wallet.php">
-            <i class="fas fa-fw fa fa fa fa-wallet"></i>
-            <span>Ví tiền </span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -50,6 +44,12 @@
             <a class="nav-link" href="store-profile.php">
                 <i class="fas fa-store-alt" style="size: 24px"></i>
                 <span><?php echo $_SESSION['nameStore']; ?></span></a>
+        </li>
+    </li>
+    <li class="nav-item">
+            <a class="nav-link" href="wallet.php">
+                <i class="fas fa-fw fa fa fa fa-wallet" style="size: 24px"></i>
+                <span>Ví tiền</span></a>
         </li>
     </li>
     <li class="nav-item">

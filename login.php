@@ -110,7 +110,6 @@ header('Content-Type: text/html; charset=UTF-8');
                                                     var username = document.getElementById('inputUserName').value;
                                                     var password = document.getElementById('inputPassword').value;
                                                     var checked = $("#remember").is(":checked");
-
                                                     $.ajax({
                                                         url: './dao/do-login.php', //This is the current doc
                                                         type: "POST",
@@ -123,6 +122,7 @@ header('Content-Type: text/html; charset=UTF-8');
                                                                 case 'false':
                                                                     var message = "Tên đăng nhập hoặc mật khẩu không chính xác. Vui lòng nhập lại.";
                                                                     alert(message);
+                                                                    location.reload();
                                                                     break;
                                                             }
                                                         }

@@ -2,11 +2,11 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin.php" style="background: whitesmoke">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.php" style="background: whitesmoke">
         <div class="sidebar-brand-icon">
             <!--<i class='fas fa-store-alt' ></i>-->
         </div>
-        <div class="sidebar-brand-text mx-3" style="color: blue">GStore <sup>.vn</sup></div>
+        <div class="sidebar-brand-text mx-3" style="color: blue">FZONE <sup>.vn</sup></div>
     </a>
 
     <!-- Divider -->

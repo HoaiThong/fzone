@@ -161,7 +161,8 @@ if ($_SESSION['status_login'] != true) {
                             //                            window.location = "../staff/test.php";
                             //
                             //                            break;
-                        
+                        default:
+                            window.location = "./staff/store.php";
                     }
                 }
             });

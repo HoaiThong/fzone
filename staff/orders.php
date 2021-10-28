@@ -37,7 +37,7 @@ $arrayBills = $billDAO->get_array_order_on_store($_idStore);
             <div class="table-responsive">
                 <table id="example" class="display table table-hover table-bordered" style="width:100%">
                     <thead>
-                        <tr>
+                        <tr style="background-color: #04AA6D;color: white;">
                             <th> </th>
                             <th> Mã đơn hàng </th>
                             <th> Mã vận đơn </th>
@@ -53,7 +53,7 @@ $arrayBills = $billDAO->get_array_order_on_store($_idStore);
                         </tr>
                     </thead>
                     <tfoot>
-                        <tr>
+                        <tr style="background-color: #04AA6D;color: white;">
                             <th> </th>
                             <th> Mã đơn hàng </th>
                             <th> Mã vận đơn </th>
@@ -160,7 +160,7 @@ include('includes/footer_1.php');
         var table = $('#example').DataTable({
 //            "ajax": "../dao/ajax-bill-details_1.php",
             "ajax": {
-                "url": "../dao/ajax-array-bills.php",
+                "url": "../dao/ajax-array-bills_by_staff.php",
                 "type": "POST",
                 "data": ({idStore: <?php echo $_idStore; ?>, idStaff: <?php echo $_idStaff; ?>}),
             },
@@ -217,9 +217,7 @@ include('includes/footer_1.php');
                                 .addClass("form-control action-bill")
                                 .attr("name", "ActionBill")
                                 .append($("<option disabled selected/>", {text: "Chọn", value: "0"}))
-                                .append($("<option/>", {text: "In", value: "10"}))
-                                .append($("<option/>", {text: "Xác nhận", value: "1"}))
-                                .append($("<option/>", {text: "Hủy", value: "3"}))[0];
+                                .append($("<option/>", {text: "Hủy", value: "30"}))[0];
 
                         $(sel.options).each(function () {
                             if (value == '31') {
@@ -311,7 +309,7 @@ include('includes/footer_1.php');
                 clearSelected();
 //                alert(idBill);
                 break;
-            case '1':
+            case '30':
                 update_bill_status(idBill,action);
                 clearSelected();
                 break;

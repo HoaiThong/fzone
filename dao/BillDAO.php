@@ -135,13 +135,19 @@ class BillDAO {
         $idStore = (int) $_idStore;
         $resultSet = null;
         try {
-            $sql = "Select b.* from tbl_bill b Where b.idStore=?";
+              //$sql = "CALL get_array_product(:idStore)";
+            $sql = 'SELECT i.* ,b.array_product '
+                    . 'FROM tbl_bill i INNER JOIN '
+                    . '(SELECT bd.idBill,concat("[",GROUP_CONCAT(JSON_OBJECT("idProduct", bd.idProduct, "skuProduct", p.skuProduct, "nameProduct", p.nameProduct,"category", p.category, "quantity", bd.quantity, "finalPrice",bd.finalPrice) SEPARATOR ","),"]") AS array_product '
+                    . 'FROM tbl_detail_bill bd JOIN tbl_product p WHERE p.idProduct=bd.idProduct GROUP BY bd.idBill ) b '
+                    . 'WHERE i.idBill=b.idBill AND i.idStore=? ORDER BY i.createAt DESC';
             $stmt = $this->conn->prepare($sql);
-            $stmt->bindParam(1, $idStore, PDO::PARAM_INT);
+            $stmt->bindParam(1, $_idStore, PDO::PARAM_INT);
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $stmt->execute();
             $resultSet = $stmt->fetchAll();
-            return $resultSet;
+            $res["data"] = $resultSet;
+            return $res;
         } catch (PDOException $e) {
             return;
         }

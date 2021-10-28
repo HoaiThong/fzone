@@ -46,74 +46,6 @@ include '../notify-msg/notify-error-modal.php';
 
             </h6>
         </div>
-        <div class="container card-body card shadow" style="margin-top: 24px;margin-bottom: 24px">
-            <div class="row" style="background: white">
-
-                <div class="col" style="border-right-style:dotted;padding-top: 2px;border-width: 1px;">
-                    <div class="form-group">
-                        <label style="color: blue"> Mã vận đơn </label>
-                        <input type="text" id="bill_express_cart" name="bill_express" class="form-control bill_express_cart" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label style="color: blue"> File vận chuyển (Link)</label>
-                        <input type="text" id="file_express_cart" name="file_express" class="form-control file_express_cart" placeholder="Link file vận chuyển">
-                    </div>
-                    <div class="form-group">
-                        <label style="color: blue"> Đối tác vận chuyển </label>
-                        <select name="ecommerce_level_cart" class="form-control ecommerce_level_cart" id="ecommerce_level_cart">
-                            <option value="0"> Tự vận chuyển</option>
-                            <option value="1"> Shopee</option>
-                            <option value="2"> Lazada</option>
-                            <option value="3"> Tiki</option>
-                            <option value="4"> Sendo </option>
-                            <option value="6"> GHTK </option>
-                            <option value="7"> GHN </option>
-                            <option value="8"> J&T </option>
-                            <option value="9"> Ninja Van </option>
-                            <option value="10"> Viettel Post </option>
-                            <option value="11"> VN Post </option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label style="color: blue"> Chú thích </label>
-                        <textarea type="text" id="note_cart" name="note" rows="6" class="form-control note_cart" placeholder=""></textarea>
-                    </div>
-
-                </div>
-                <div class="col" style="padding-top: 2px;">
-                    <div class="form-group">
-                        <label style="color: blue">Tên Người Mua </label>
-                        <input type="text" id="buyer_name_cart" name="buyer_name" class="form-control buyer_name" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label style="color: blue">SDT</label>
-                        <input type="number" id="buyer_phone_cart" name="buyer_phone" class="form-control buyer_phone" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label style="color: blue">Email</label>
-                        <input type="email" id="buyer_email_cart" name="buyer_email_cart" class="form-control buyer_email" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label style="color: blue">Địa chỉ</label>
-                        <input type="text" id="buyer_address_cart" name="buyer_address" class="form-control buyer_address_cart" placeholder="">
-                    </div>
-                </div>
-            </div>
-            <!--            <div class="row ">
-                            <div class="col-sm-4" ></div>
-                            <div class="col-sm-4" ></div>
-                            <div class="col-sm-4 card shadow mb-4" ><div class="card-body row">
-                                    <div class="text-center my-auto">
-                                        <span class="col-xl-3 col-md-6 mb-4">  
-                                            <button type="submit" onclick="" name="btn" class="btn btn-success"><i class="fas fas-close"></i>Đặt hàng </button>
-                                        </span>
-                                        <span class="col-xl-3 col-md-6 mb-4" style="color: black">Tổng tiền:</span>
-                                        <span class="col-xl-3 col-md-6 mb-4" style="color: red"></span>
-            
-                                    </div>
-                                </div></div>
-                        </div>-->
-        </div>
 
         <div class="card-body">
 
@@ -190,6 +122,79 @@ include '../notify-msg/notify-error-modal.php';
 
             </div>
         </div>
+
+    </div>
+    <div class="row ">
+        <div class="container card-body card shadow" style="margin-top: 24px;margin-bottom: 24px">
+            <div class="row" style="background: white">
+
+                <div class="col" style="border-right-style:dotted;padding-top: 2px;border-width: 1px;">
+                    <div class="form-group">
+                        <label style="color: blue"> Mã vận đơn </label>
+                        <input type="text" id="bill_express_cart" name="bill_express" class="form-control bill_express_cart" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label style="color: blue"> File vận chuyển (Link)</label>
+                        <input type="text" id="file_express_cart" name="file_express" class="form-control file_express_cart" placeholder="Link file vận chuyển">
+                    </div>
+                    <div class="form-group">
+                        <label style="color: blue"> Đối tác vận chuyển </label>
+                        <select name="ecommerce_level_cart" class="form-control ecommerce_level_cart" id="ecommerce_level_cart">
+                            <option value="0"> Tự vận chuyển</option>
+                            <option value="1"> Shopee</option>
+                            <option value="2"> Lazada</option>
+                            <option value="3"> Tiki</option>
+                            <option value="4"> Sendo </option>
+                            <option value="6"> GHTK </option>
+                            <option value="7"> GHN </option>
+                            <option value="8"> J&T </option>
+                            <option value="9"> Ninja Van </option>
+                            <option value="10"> Viettel Post </option>
+                            <option value="11"> VN Post </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label style="color: blue"> Chú thích </label>
+                        <textarea type="text" id="note_cart" name="note" rows="6" class="form-control note_cart" placeholder=""></textarea>
+                    </div>
+
+                </div>
+                <div class="col" style="padding-top: 2px;">
+                    <div class="form-group">
+                        <label style="color: blue">Tên Người Mua </label>
+                        <input type="text" id="buyer_name_cart" name="buyer_name" class="form-control buyer_name" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label style="color: blue">SDT</label>
+                        <input type="number" id="buyer_phone_cart" name="buyer_phone" class="form-control buyer_phone" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label style="color: blue">Email</label>
+                        <input type="email" id="buyer_email_cart" name="buyer_email_cart" class="form-control buyer_email" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label style="color: blue">Địa chỉ</label>
+                        <input type="text" id="buyer_address_cart" name="buyer_address" class="form-control buyer_address_cart" placeholder="">
+                    </div>
+                </div>
+            </div>
+            <!--            <div class="row ">
+                            <div class="col-sm-4" ></div>
+                            <div class="col-sm-4" ></div>
+                            <div class="col-sm-4 card shadow mb-4" ><div class="card-body row">
+                                    <div class="text-center my-auto">
+                                        <span class="col-xl-3 col-md-6 mb-4">  
+                                            <button type="submit" onclick="" name="btn" class="btn btn-success"><i class="fas fas-close"></i>Đặt hàng </button>
+                                        </span>
+                                        <span class="col-xl-3 col-md-6 mb-4" style="color: black">Tổng tiền:</span>
+                                        <span class="col-xl-3 col-md-6 mb-4" style="color: red"></span>
+            
+                                    </div>
+                                </div></div>
+                        </div>-->
+        </div>
+
+
     </div>
     <div class="row ">
         <div class="col-sm-4" ></div>

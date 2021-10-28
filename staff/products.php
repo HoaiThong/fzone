@@ -15,9 +15,6 @@ $arrayProduct = $productDAO->get_array_product($_idStore);
 ?>
 <!-- Begin Page Content -->
 <?php
-include './includes/add_product_form.php';
-include './includes/edit_product_form.php';
-include './includes/delete_modal.php';
 include './includes/buy-now-modal.php';
 include './includes/add-shopping-cart-modal.php';
 include '../notify-msg/notify-success-modal.php';
@@ -33,16 +30,6 @@ include '../notify-msg/notify-error-modal.php';
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary" >SẢN PHẨM   
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProductModal" style="margin-left:  40px;">
-                    + Thêm sản phẩm 
-                </button>
-                <!--                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile" style="background: white;color: black;margin-left:  10px;border-color: blue">
-                                    <i class="fa fa-upload" style="color:red"></i>  Tải lên hàng loạt 
-                                </button>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile" style="background: white;color: black;margin-left:  10px;border-color: blue">
-                                    <i class="fa fa-download" style="color:violet"></i>  Tải xuống hàng loạt 
-                                </button>-->
-
             </h6>
         </div>
 
@@ -52,7 +39,7 @@ include '../notify-msg/notify-error-modal.php';
 
                 <table class="table table-hover table-bordered " id="dataTable" style="width:100%" cellspacing="0">
                     <thead>
-                        <tr style="background: ghostwhite;">
+                        <tr style="background-color: #04AA6D;color: white;">
                             <th> Mã sản phẩm </th>
                             <th> Mã SKU </th>
                             <th>Hình ảnh</th>
