@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $_SESSION['phone'] = $phoneNumber;
         $_SESSION['userName'] = $response[0]['userName'];
         $_SESSION['idUser'] = $response[0]['idUser'];
+        $_SESSION['nStore'] = $response[0]['nStore'];
         $_SESSION['status_login'] = true;
         echo 'true';
     } else {

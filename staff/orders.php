@@ -191,13 +191,13 @@ include('includes/footer_1.php');
                     "render": function (data, type, row, meta) {
                         switch (data) {
                             case '1':
-                                return '<strong style="color: red;">Đã xác nhận</strong>';
+                                return '<strong style="color: black;">Đã xác nhận</strong>';
                             case '10':
-                                return '<strong style="color: red;">Đã in file vận chuyển</strong>';
+                                return '<strong style="color: black;">Đã in file vận chuyển</strong>';
                             case '11':
-                                return '<strong style="color: red;">Đã giao vận chuyển</strong>';
+                                return '<strong style="color: black;">Đã giao vận chuyển</strong>';
                             case '2':
-                                return '<strong style="color: red;">Chờ xác nhận</strong>';
+                                return '<strong style="color: green;">Chờ xác nhận</strong>';
                             case '3':
                                 return '<strong style="color: red;">Hủy</strong>';
                             case '30':
@@ -310,8 +310,8 @@ include('includes/footer_1.php');
 //                alert(idBill);
                 break;
             case '30':
-                update_bill_status(idBill,action);
-                clearSelected();
+                update_bill_status(idBill, action);
+                location.reload();
                 break;
             case '3':
                 cancel_bill(idBill);
@@ -350,20 +350,20 @@ include('includes/footer_1.php');
             }
         });
     }
-    
-    function update_bill_status(idBill,status) {
+
+    function update_bill_status(idBill, status) {
         $.ajax({
             url: '../dao/update-order-status.php', //This is the current doc
             type: "POST",
-            data: ({idBill: idBill,status:status}),
+            data: ({idBill: idBill, status: status}),
             success: function (data) {
                 console.log(data);
                 if (data === 'success') {
-                    location.reload();
+                    alert(data);
                 } else {
                     alert(data);
                 }
-
+                clearSelected();
                 //or if the data is JSON
 //                var jdata = jQuery.parseJSON(data);
 

@@ -37,9 +37,7 @@
         <a class="nav-link" href="admin_orders.php">
             <i class="fas fa-fw fa fa fa fa-cube"></i>
             <span>Đơn hàng </span></a>
-        <a class="nav-link" href="admin-wallet.php">
-            <i class="fas fa-fw fa fa fa fa-wallet"></i>
-            <span>Ví tiền </span></a>
+
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -47,17 +45,23 @@
         Store Profile
     </div>
     <li class="nav-item">
-            <a class="nav-link" href="store-profile.php">
-                <i class="fas fa-store-alt" style="size: 24px"></i>
-                <span><?php echo $_SESSION['nameStore']; ?></span></a>
-        </li>
+        <a class="nav-link" href="store-profile.php">
+            <i class="fas fa-store-alt" style="size: 24px"></i>
+            <span><?php echo $_SESSION['nameStore']; ?></span></a>
     </li>
-    <li class="nav-item">
-            <a class="nav-link" href="">
-                <i class="fas fa-paper-plane" ></i>
-                <span>Hướng dẫn</span></a>
-        </li>
-    </li>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="admin-wallet.php">
+        <i class="fas fa-fw fa fa fa fa-wallet" ></i>
+        <span>Ví tiền</span></a>
+</li>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="">
+        <i class="fas fa-paper-plane" ></i>
+        <span>Hướng dẫn</span></a>
+</li>
+</li>
 <!--        
     
          Heading 
@@ -108,55 +112,55 @@
             </div>
         </li>-->
 
-    <!-- Divider -->
-    <!--    <hr class="sidebar-divider">
-    
-         Heading 
-        <div class="sidebar-heading">
-            Addons
-        </div>-->
+<!-- Divider -->
+<!--    <hr class="sidebar-divider">
 
-    <!-- Nav Item - Pages Collapse Menu -->
-    <!--    <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                <i class="fas fa-fw fa-folder"></i>
-                <span>Pages</span>
-            </a>
-            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Login Screens:</h6>
-                    <a class="collapse-item" href="login.php">Login</a>
-                    <a class="collapse-item" href="register.html">Register</a>
-                    <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                    <div class="collapse-divider"></div>
-                    <h6 class="collapse-header">Other Pages:</h6>
-                    <a class="collapse-item" href="404.html">404 Page</a>
-                    <a class="collapse-item" href="blank.html">Blank Page</a>
-                </div>
+     Heading 
+    <div class="sidebar-heading">
+        Addons
+    </div>-->
+
+<!-- Nav Item - Pages Collapse Menu -->
+<!--    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Pages</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Login Screens:</h6>
+                <a class="collapse-item" href="login.php">Login</a>
+                <a class="collapse-item" href="register.html">Register</a>
+                <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+                <div class="collapse-divider"></div>
+                <h6 class="collapse-header">Other Pages:</h6>
+                <a class="collapse-item" href="404.html">404 Page</a>
+                <a class="collapse-item" href="blank.html">Blank Page</a>
             </div>
-        </li>-->
+        </div>
+    </li>-->
 
-    <!-- Nav Item - Charts -->
-    <!--    <li class="nav-item">
-            <a class="nav-link" href="charts.html">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Charts</span></a>
-        </li>
-    
-         Nav Item - Tables 
-        <li class="nav-item">
-            <a class="nav-link" href="tables.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Tables</span></a>
-        </li>-->
+<!-- Nav Item - Charts -->
+<!--    <li class="nav-item">
+        <a class="nav-link" href="charts.html">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Charts</span></a>
+    </li>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
+     Nav Item - Tables 
+    <li class="nav-item">
+        <a class="nav-link" href="tables.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Tables</span></a>
+    </li>-->
 
-    <!-- Sidebar Toggler (Sidebar) -->
-    <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle" ></button>
-    </div>
+<!-- Divider -->
+<hr class="sidebar-divider d-none d-md-block">
+
+<!-- Sidebar Toggler (Sidebar) -->
+<div class="text-center d-none d-md-inline">
+    <button class="rounded-circle border-0" id="sidebarToggle" ></button>
+</div>
 
 </ul>
 <!-- End of Sidebar -->
@@ -191,12 +195,12 @@
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
 
-                <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+<!--                 Nav Item - Search Dropdown (Visible Only XS) 
                 <li class="nav-item dropdown no-arrow d-sm-none">
                     <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-search fa-fw"></i>
                     </a>
-                    <!-- Dropdown - Messages -->
+                     Dropdown - Messages 
                     <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                         <form class="form-inline mr-auto w-100 navbar-search">
                             <div class="input-group">
@@ -211,14 +215,14 @@
                     </div>
                 </li>
 
-                <!-- Nav Item - Alerts -->
+                 Nav Item - Alerts 
                 <li class="nav-item dropdown no-arrow mx-1">
                     <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-bell fa-fw"></i>
-                        <!-- Counter - Alerts -->
+                         Counter - Alerts 
                         <span class="badge badge-danger badge-counter">3+</span>
                     </a>
-                    <!-- Dropdown - Alerts -->
+                     Dropdown - Alerts 
                     <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                         <h6 class="dropdown-header">
                             Alerts Center
@@ -260,14 +264,14 @@
                     </div>
                 </li>
 
-                <!-- Nav Item - Messages -->
+                 Nav Item - Messages 
                 <li class="nav-item dropdown no-arrow mx-1">
                     <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-envelope fa-fw"></i>
-                        <!-- Counter - Messages -->
+                         Counter - Messages 
                         <span class="badge badge-danger badge-counter">7</span>
                     </a>
-                    <!-- Dropdown - Messages -->
+                     Dropdown - Messages 
                     <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                         <h6 class="dropdown-header">
                             Message Center
@@ -314,7 +318,7 @@
                         </a>
                         <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                     </div>
-                </li>
+                </li>-->
 
                 <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -323,7 +327,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="mr-2 d-none d-lg-inline text-gray-600 small">
 
-                           <?php echo $_SESSION['userName'];?>
+                            <?php echo $_SESSION['userName']; ?>
 
                         </span>
                         <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
